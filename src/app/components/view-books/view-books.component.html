@@ -1,0 +1,8 @@
+<h2 class="font-semibold text-3xl">{{ viewName + '.:' | titlecase }}</h2>
+<h3 class="font-semibold text-3xl" *ngIf="bookResult.length == 0">
+  Sem resultados
+</h3>
+
+<app-book *ngFor="let book of bookResult" [bookResponse]="book" (updateCurrentView)="onUpdateCurrentView()"
+  class="px-5 py-8 items-center bg-white rounded-3 border-solid border-[#551800] border-3 flex flex-col justify-between lg:flex-row md:flex-row md:py-14 md:px-10 md:items-start">
+</app-book>

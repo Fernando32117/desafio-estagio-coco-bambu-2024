@@ -1,0 +1,13 @@
+<div class="w-full bg-white rounded-sm flex mt-5 border-solid border-3 border-base-black justify-between">
+  <input name="input_book_search" type="text"
+    class="w-full text-lg px-7 py-4 placeholder-slate-400 text-ellipsis focus:outline-none"
+    placeholder="Digite o livro que procura" [(ngModel)]="input_book_search" (keyup.enter)="search()" />
+
+  <button class="flex justify-center items-center px-6 py-4 bg-base-black" (click)="search()">
+    <img src="assets/icon/search.svg" />
+  </button>
+</div>
+
+<p *ngIf="toggle_error_message" class="font-semibold flex my-2">
+  Você precisa preencher esse campo
+</p>

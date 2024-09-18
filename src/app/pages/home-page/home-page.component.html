@@ -1,0 +1,13 @@
+<main class="p-4 flex flex-col min-h-screen h-auto items-center justify-center scroll-smooth w-full">
+  <section class="h-[90vh] flex flex-col justify-center">
+    <app-logo class="flex flex-col justify-center items-center"></app-logo>
+    <app-form (updateData)="onUpdateData($event)" (updateLoader)="onUpdateLoaderStatus($event)"
+      class="flex flex-col"></app-form>
+    <app-loader class="flex self-center" *ngIf="loader_status"></app-loader>
+  </section>
+
+  <app-float-menu></app-float-menu>
+
+  <app-view-books *ngIf="book_search_result.length > 0" [bookResult]="book_search_result" [viewName]="'Resultados'"
+    class="w-full md:w-11/12 grid gap-4 grid-cols-1 my-8"></app-view-books>
+</main>

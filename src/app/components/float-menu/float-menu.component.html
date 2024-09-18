@@ -1,0 +1,37 @@
+<menu
+  class="top-8 right-4 absolute bg-base-black z-10 flex flex-col justify-end items-end shadow-default md:right-10 text-background border-solid border-base-black border-3">
+  <button (click)="onToggleMenu()" class="cursor-pointer flex justify-end p-2 w-fit"
+    [@openClose]="toggleMenu ? 'open' : 'close'">
+    <img *ngIf="toggleMenu == false" src="assets/icon/menu.svg" class="p-2" />
+    <img *ngIf="toggleMenu" src="assets/icon/close.svg" class="p-2" />
+  </button>
+
+  <nav *ngIf="toggleMenu" class="flex-col justify-center pb-4 p-3.5" @easeInOut>
+    <ul class="w-36">
+      <li *ngIf="!isBaseURL"
+        class="flex font-bold text-md p-2 rounded mb-2 hover:bg-[rgba(255,255,255,.2)] cursor-pointer">
+        <img src="assets/icon/home.svg" class="mr-2 w-5 h-5" />
+        <a [routerLink]="['/']">Home</a>
+      </li>
+
+      <li class="flex font-bold text-md p-2 rounded mb-2 hover:bg-[rgba(255,255,255,.2)] cursor-pointer"
+        routerLinkActive="bg-primary">
+        <img src="assets/icon/favorite.svg" class="mr-2 w-5 h-5" />
+        <a [routerLink]="['/favorites']" class="w-full">Favoritos</a>
+      </li>
+
+      <li
+        class="flex font-bold text-md p-2 rounded mb-2 visited:bg-background hover:bg-[rgba(255,255,255,.2)] cursor-pointer"
+        routerLinkActive="bg-primary">
+        <img src="assets/icon/saved.svg" class="mr-2 w-5 h-5" />
+        <a [routerLink]="['/saved']" class="w-full">Salvos</a>
+      </li>
+
+      <li class="flex font-bold text-md p-2 rounded hover:bg-[rgba(255,255,255,.2)] cursor-pointer"
+        routerLinkActive="bg-primary">
+        <img src="assets/icon/finished.svg" class="mr-2 w-5 h-5" />
+        <a [routerLink]="['/finished']" class="w-full">Finalizados</a>
+      </li>
+    </ul>
+  </nav>
+</menu>

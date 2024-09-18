@@ -1,0 +1,13 @@
+<button
+  class="top-4 right-4 transition-transform hover:scale-75"
+  (click)="onToggle()"
+>
+  <img
+    *ngIf="!buttonStatus"
+    src="assets/icon/{{ src_icon[buttonName].default }}"
+  />
+  <img
+    *ngIf="buttonStatus"
+    src="assets/icon/{{ src_icon[buttonName].checked }}"
+  />
+</button>

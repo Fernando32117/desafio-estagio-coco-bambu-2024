@@ -1,0 +1,16 @@
+<div *ngIf="categories.length == 1" class="flex text-lg leading-tight">
+  <label class="font-bold pr-2">CATEGORIA:</label>
+  <p>{{ categories[0] | uppercase }}</p>
+</div>
+
+<div *ngIf="categories.length == 2" class="flex text-lg leading-tight">
+  <label class="font-bold pr-2">CATEGORIA:</label>
+  <p>{{ categories[0] | uppercase }} & {{ categories[1] | uppercase }}</p>
+</div>
+
+<div *ngIf="categories.length > 2" class="flex text-lg leading-tight flex-wrap">
+  <label class="font-bold pr-2">CATEGORIA:</label>
+  <div *ngFor="let category of categories; let last = last" [ngClass]="{ 'not-last': !last }" class="flex">
+    <p>{{ category | uppercase }}</p>
+  </div>
+</div>

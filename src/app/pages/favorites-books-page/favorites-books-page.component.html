@@ -1,0 +1,6 @@
+<main class="p-4 flex flex-col min-h-100vh h-auto items-center justify-center scroll-smooth">
+  <app-float-menu></app-float-menu>
+  <app-loader class="flex self-center" *ngIf="loader_status"></app-loader>
+  <app-view-books *ngIf="bookResult" (updateView)="onFetchData()" [bookResult]="bookResult" [viewName]="'Favoritos'"
+    class="w-full md:w-11/12 grid gap-4 grid-cols-1 my-8"></app-view-books>
+</main>
